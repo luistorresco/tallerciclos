@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promedio de Notas</title>
+</head>
+<body>
+    <style>
+        /* Estilos para el menú */
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+    
+        li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+    
+        a {
+          text-decoration: none;
+          padding: 5px 10px;
+          background-color: #ddd;
+          color: #333;
+          border-radius: 5px;
+        }
+      </style>
+    <ul>
+        <li><a href="./1.html">1</a></li>
+        <li><a href="./2.html">2</a></li>
+        <li><a href="./3.html">3</a></li>
+        <li><a href="./4.html">4</a></li>
+        <li><a href="./5.html">5</a></li>
+        <li><a href="./6.html">6</a></li>
+        <li><a href="./7.html">7</a></li>
+        <li><a href="./8.html">8</a></li>
+        <li><a href="./9.html">9</a></li>
+        <li><a href="./10.html">10</a></li>
+        <li><a href="./11.html">11</a></li>
+        <li><a href="./12.html">12</a></li>
+        <li><a href="./13.html">13</a></li>
+        <li><a href="./14.html">14</a></li>
+      </ul>
+  <h1>Promedio de Notas de Alumnos</h1>
+
+  <div id="formulario">
+    <h2>Ingresar Datos</h2>
+    <form id="datosForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required><br><br>
+
+      <label for="materia">Materia:</label>
+      <input type="text" id="materia" required><br><br>
+
+      <label for="nota1">Nota 1:</label>
+      <input type="number" id="nota1" step="0.1" required><br><br>
+
+      <label for="nota2">Nota 2:</label>
+      <input type="number" id="nota2" step="0.1" required><br><br>
+
+      <label for="nota3">Nota 3:</label>
+      <input type="number" id="nota3" step="0.1" required><br><br>
+
+      <button type="submit">Agregar Alumno</button>
+    </form>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script>
+    // Arreglo para almacenar los alumnos ingresados
+    var alumnos = [];
+
+    // Capturar el formulario y agregar evento de envío
+    var formulario = document.getElementById("datosForm");
+    formulario.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Obtener los valores ingresados por el usuario
+      var nombre = document.getElementById("nombre").value;
+      var materia = document.getElementById("materia").value;
+      var nota1 = parseFloat(document.getElementById("nota1").value);
+      var nota2 = parseFloat(document.getElementById("nota2").value);
+      var nota3 = parseFloat(document.getElementById("nota3").value);
+
+      // Calcular el promedio de notas
+      var promedio = (nota1 + nota2 + nota3) / 3;
+
+      // Crear un objeto alumno con los datos ingresados
+      var alumno = {
+        nombre: nombre,
+        materia: materia,
+        notas: [nota1, nota2, nota3],
+        promedio: promedio.toFixed(1)
+      };
+
+      // Agregar el alumno al arreglo de alumnos
+      alumnos.push(alumno);
+
+      // Limpiar el formulario
+      formulario.reset();
+
+      // Actualizar la tabla de resultados
+      actualizarTabla();
+    });
+
+    // Función para actualizar la tabla de resultados
+    function actualizarTabla() {
+      // Crear una tabla con los resultados
+      var tabla = "<table>";
+      tabla += "<tr><th>Nombre</th><th>Materia</th><th>Nota 1</th><th>Nota 2</th><th>Nota 3</th><th>Promedio</th></tr>";
+
+      // Agregar cada alumno al cuerpo de la tabla
+      for (var i = 0; i < alumnos.length; i++) {
+        var alumno = alumnos[i];
+
+        tabla += "<tr>";
+        tabla += "<td>" + alumno.nombre + "</td>";
+        tabla += "<td>" + alumno.materia + "</td>";
+        tabla += "<td>" + alumno.notas[0] + "</td>";
+        tabla += "<td>" + alumno.notas[1] + "</td>";
+        tabla += "<td>" + alumno.notas[2] + "</td>";
+        tabla += "<td>" + alumno.promedio + "</td>";
+        tabla += "</tr>";
+      }
+
+      tabla += "</table>";
+
+      // Mostrar la tabla en el elemento con id "resultado"
+      document.getElementById("resultado").innerHTML = tabla;
+    }
+  </script>
+</body>
+</html>

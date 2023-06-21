@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Estilos para el menú */
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+    
+        li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+    
+        a {
+          text-decoration: none;
+          padding: 5px 10px;
+          background-color: #ddd;
+          color: #333;
+          border-radius: 5px;
+        }
+      </style>
+    <ul>
+        <li><a href="./1.html">1</a></li>
+        <li><a href="./2.html">2</a></li>
+        <li><a href="./3.html">3</a></li>
+        <li><a href="./4.html">4</a></li>
+        <li><a href="./5.html">5</a></li>
+        <li><a href="./6.html">6</a></li>
+        <li><a href="./7.html">7</a></li>
+        <li><a href="./8.html">8</a></li>
+        <li><a href="./9.html">9</a></li>
+        <li><a href="./10.html">10</a></li>
+        <li><a href="./11.html">11</a></li>
+        <li><a href="./12.html">12</a></li>
+        <li><a href="./13.html">13</a></li>
+        <li><a href="./14.html">14</a></li>
+      </ul>
+  <title>Tabla de multiplicar descendente</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tabla de multiplicar descendente</h1>
+
+  <form id="formulario">
+    <label for="numero">Ingrese un número:</label>
+    <input type="number" id="numero" min="1" required>
+    <br>
+    <button type="submit">Generar tabla</button>
+  </form>
+
+  <div id="tabla-container"></div>
+
+  <script>
+    var formulario = document.getElementById('formulario');
+    var tablaContainer = document.getElementById('tabla-container');
+
+    formulario.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var numero = parseInt(document.getElementById('numero').value);
+
+      if (isNaN(numero)) {
+        alert('Por favor, ingrese un número válido.');
+      } else {
+        tablaContainer.innerHTML = generarTablaMultiplicarDescendente(numero);
+      }
+    });
+
+    function generarTablaMultiplicarDescendente(numero) {
+      var tabla = '<table>';
+      tabla += '<caption>Tabla de multiplicar descendente del ' + numero + '</caption>';
+      tabla += '<tr><th>Número</th><th>Resultado</th></tr>';
+
+      for (var i = 10; i >= 1; i--) {
+        var resultado = numero * i;
+        tabla += '<tr><td>' + numero + ' x ' + i + '</td><td>' + resultado + '</td></tr>';
+      }
+
+      tabla += '</table>';
+
+      return tabla;
+    }
+  </script>
+</body>
+</html>

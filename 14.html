@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adivina el número</title>
+</head>
+<body>
+    <style>
+        /* Estilos para el menú */
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+    
+        li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+    
+        a {
+          text-decoration: none;
+          padding: 5px 10px;
+          background-color: #ddd;
+          color: #333;
+          border-radius: 5px;
+        }
+      </style>
+    <ul>
+        <li><a href="./1.html">1</a></li>
+        <li><a href="./2.html">2</a></li>
+        <li><a href="./3.html">3</a></li>
+        <li><a href="./4.html">4</a></li>
+        <li><a href="./5.html">5</a></li>
+        <li><a href="./6.html">6</a></li>
+        <li><a href="./7.html">7</a></li>
+        <li><a href="./8.html">8</a></li>
+        <li><a href="./9.html">9</a></li>
+        <li><a href="./10.html">10</a></li>
+        <li><a href="./11.html">11</a></li>
+        <li><a href="./12.html">12</a></li>
+        <li><a href="./13.html">13</a></li>
+        <li><a href="./14.html">14</a></li>
+      </ul>
+  <h1>Adivina el número</h1>
+  <p>14.	Utiliza la función Math.ramdon() para generar un número aleatorio y compararlo con el que el usuario digite. tienes 3 intentos para acertar. </p>
+
+  <p>Intenta adivinar un número entre 1 y 10. Tienes 3 intentos.</p>
+
+  <label for="numero">Ingresa un número:</label>
+  <input type="number" id="numero">
+  <button onclick="adivinarNumero()">Adivinar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    var numeroAdivinar = Math.floor(Math.random() * 10) + 1; // Genera un número aleatorio entre 1 y 10
+    var intentos = 3; // Número de intentos permitidos
+
+    function adivinarNumero() {
+      var numeroUsuario = parseInt(document.getElementById("numero").value);
+
+      if (isNaN(numeroUsuario)) {
+        mostrarResultado("Ingresa un número válido.");
+        return;
+      }
+
+      if (numeroUsuario === numeroAdivinar) {
+        mostrarResultado("¡Felicitaciones! Adivinaste el número.");
+      } else {
+        intentos--;
+
+        if (intentos > 0) {
+          mostrarResultado("Intenta nuevamente. Te quedan " + intentos + " intentos.");
+        } else {
+          mostrarResultado("Lo siento, no lograste adivinar el número. El número correcto era: " + numeroAdivinar);
+        }
+      }
+    }
+
+    function mostrarResultado(mensaje) {
+      document.getElementById("resultado").innerHTML = mensaje;
+    }
+  </script>
+</body>
+</html>
