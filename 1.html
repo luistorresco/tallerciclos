@@ -1,81 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        /* Estilos para el menú */
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-    
-        li {
-          display: inline-block;
-          margin-right: 10px;
-        }
-    
-        a {
-          text-decoration: none;
-          padding: 5px 10px;
-          background-color: #ddd;
-          color: #333;
-          border-radius: 5px;
-        }
-      </style>
-    <ul>
-        <li><a href="./1.html">1</a></li>
-        <li><a href="./2.html">2</a></li>
-        <li><a href="./3.html">3</a></li>
-        <li><a href="./4.html">4</a></li>
-        <li><a href="./5.html">5</a></li>
-        <li><a href="./6.html">6</a></li>
-        <li><a href="./7.html">7</a></li>
-        <li><a href="./8.html">8</a></li>
-        <li><a href="./9.html">9</a></li>
-        <li><a href="./10.html">10</a></li>
-        <li><a href="./11.html">11</a></li>
-        <li><a href="./12.html">12</a></li>
-        <li><a href="./13.html">13</a></li>
-        <li><a href="./14.html">14</a></li>
-      </ul>
-  <title>Suma de los primeros N números naturales</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Js</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-  <h1>Suma de los primeros N números naturales</h1>
-<p>1.	Hacer un programa que calcule la suma de los N primeros números naturales, dónde N es el número límite ingresado.</p>
-  <form id="formulario">
-    <label for="limite">Ingrese el número límite:</label>
-    <input type="number" id="limite" min="1" required>
-    <button type="submit">Calcular</button>
-  </form>
+  <nav>
+    <ul>
+      <li><a href="./1.html">1</a></li>
+      <li><a href="./2.html">2</a></li>
+      <li><a href="./3.html">3</a></li>
+      <li><a href="./4.html">4</a></li>
+      <li><a href="./5.html">5</a></li>
+      <li><a href="./6.html">6</a></li>
+      <li><a href="./7.html">7</a></li>
+      <li><a href="./8.html">8</a></li>
+      <li><a href="./9.html">9</a></li>
+      <li><a href="./10.html">10</a></li>
+      <li><a href="./11.html">11</a></li>
+      <li><a href="./12.html">12</a></li>
+      <li><a href="./13.html">13</a></li>
+      <li><a href="./14.html">14</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Suma de los primeros N números naturales</h1>
+    <p>1. Hacer un programa que calcule la suma de los N primeros números naturales, dónde N es el número límite
+      ingresado.</p>
+    <form id="formulario">
+      <label for="limite">Ingrese el número límite:</label>
+      <input type="number" id="limite" min="1" required>
+      <button type="submit">Calcular</button>
+    </form>
 
-  <div id="resultado"></div>
-
-  <script>
-    // Obtener el formulario y el elemento para mostrar el resultado
-    var formulario = document.getElementById('formulario');
-    var resultado = document.getElementById('resultado');
-
-    formulario.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      // Obtener el número límite de los primeros números naturales
-      var limite = parseInt(document.getElementById('limite').value);
-
-      // Validar si el número límite es válido
-      if (isNaN(limite) || limite <= 0) {
-        resultado.textContent = 'Por favor, ingrese un número válido y mayor a cero.';
-      } else {
-        // Calcular la suma de los N primeros números naturales
-        var suma = 0;
-        for (var i = 1; i <= limite; i++) {
-          suma += i;
-        }
-
-        // Mostrar el resultado de la suma
-        resultado.textContent = 'La suma de los primeros ' + limite + ' números naturales es: ' + suma;
-      }
-    });
-  </script>
+    <div id="resultado"></div>
+  </main>
+  <footer>
+    <hr>
+    <p>Programador: Luis Fernando Torres Correa</p>
+    <p>moviles 1</p>
+  </footer>
+  <script src="./js/1.js"></script>
 </body>
+
 </html>

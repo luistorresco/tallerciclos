@@ -1,79 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        /* Estilos para el menú */
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-    
-        li {
-          display: inline-block;
-          margin-right: 10px;
-        }
-    
-        a {
-          text-decoration: none;
-          padding: 5px 10px;
-          background-color: #ddd;
-          color: #333;
-          border-radius: 5px;
-        }
-      </style>
-    <ul>
-        <li><a href="./1.html">1</a></li>
-        <li><a href="./2.html">2</a></li>
-        <li><a href="./3.html">3</a></li>
-        <li><a href="./4.html">4</a></li>
-        <li><a href="./5.html">5</a></li>
-        <li><a href="./6.html">6</a></li>
-        <li><a href="./7.html">7</a></li>
-        <li><a href="./8.html">8</a></li>
-        <li><a href="./9.html">9</a></li>
-        <li><a href="./10.html">10</a></li>
-        <li><a href="./11.html">11</a></li>
-        <li><a href="./12.html">12</a></li>
-        <li><a href="./13.html">13</a></li>
-        <li><a href="./14.html">14</a></li>
-      </ul>
-  <title>Ciclo de conteo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Js</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-  <h1>Ciclo de conteo</h1>
-<p>6.	Cree un ciclo que cuente del 1 al 30 en intervalos el número ingresado</p>
-  <form id="formulario">
-    <label for="numero">Ingrese un número:</label>
-    <input type="number" id="numero" min="1" required>
-    <br>
-    <button type="submit">Iniciar ciclo</button>
-  </form>
+  <nav>
+    <ul>
+      <li><a href="./1.html">1</a></li>
+      <li><a href="./2.html">2</a></li>
+      <li><a href="./3.html">3</a></li>
+      <li><a href="./4.html">4</a></li>
+      <li><a href="./5.html">5</a></li>
+      <li><a href="./6.html">6</a></li>
+      <li><a href="./7.html">7</a></li>
+      <li><a href="./8.html">8</a></li>
+      <li><a href="./9.html">9</a></li>
+      <li><a href="./10.html">10</a></li>
+      <li><a href="./11.html">11</a></li>
+      <li><a href="./12.html">12</a></li>
+      <li><a href="./13.html">13</a></li>
+      <li><a href="./14.html">14</a></li>
+    </ul>
+  </nav>
+  <main>
+      <h1>Ciclo de conteo</h1>
+      <p>6. Cree un ciclo que cuente del 1 al 30 en intervalos el número ingresado</p>
+      <form id="formulario">
+        <label for="numero">Ingrese un número:</label>
+        <input type="number" id="numero" min="1" required>
+        <br>
+        <button type="submit">Iniciar ciclo</button>
+      </form>
 
-  <div id="resultado"></div>
-
-  <script>
-    var formulario = document.getElementById('formulario');
-    var resultadoDiv = document.getElementById('resultado');
-
-    formulario.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var numero = parseInt(document.getElementById('numero').value);
-
-      if (isNaN(numero)) {
-        alert('Por favor, ingrese un número válido.');
-      } else {
-        resultadoDiv.innerText = '';
-        realizarCiclo(numero);
-      }
-    });
-
-    function realizarCiclo(numero) {
-      for (var i = 1; i <= 30; i += numero) {
-        resultadoDiv.innerText += i + ', ';
-      }
-    }
-  </script>
+      <div id="resultado"></div>
+  </main>
+  <footer>
+    <hr>
+    <p>Programador: Luis Fernando Torres Correa</p>
+    <p>moviles 1</p>
+  </footer>
+  <script src="./js/6.js"></script>
 </body>
+
 </html>

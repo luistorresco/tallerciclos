@@ -1,85 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        /* Estilos para el menú */
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-    
-        li {
-          display: inline-block;
-          margin-right: 10px;
-        }
-    
-        a {
-          text-decoration: none;
-          padding: 5px 10px;
-          background-color: #ddd;
-          color: #333;
-          border-radius: 5px;
-        }
-      </style>
-    <ul>
-        <li><a href="./1.html">1</a></li>
-        <li><a href="./2.html">2</a></li>
-        <li><a href="./3.html">3</a></li>
-        <li><a href="./4.html">4</a></li>
-        <li><a href="./5.html">5</a></li>
-        <li><a href="./6.html">6</a></li>
-        <li><a href="./7.html">7</a></li>
-        <li><a href="./8.html">8</a></li>
-        <li><a href="./9.html">9</a></li>
-        <li><a href="./10.html">10</a></li>
-        <li><a href="./11.html">11</a></li>
-        <li><a href="./12.html">12</a></li>
-        <li><a href="./13.html">13</a></li>
-        <li><a href="./14.html">14</a></li>
-      </ul>
-  <title>Cálculo de suma de números enteros</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Js</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-  <h1>Cálculo de suma de números enteros</h1>
-<p>3.	Ingrese varios números enteros y muestre la cantidad de números ingresados y la suma de los mismos. Realice esta acción hasta que el usuario ingrese la palabra FIN.</p>
-  <form id="formulario">
-    <label for="numero">Ingrese un número entero (o "FIN" para terminar):</label>
-    <input type="text" id="numero">
-    <br>
-    <button type="submit">Agregar</button>
-  </form>
+  <nav>
+    <ul>
+      <li><a href="./1.html">1</a></li>
+      <li><a href="./2.html">2</a></li>
+      <li><a href="./3.html">3</a></li>
+      <li><a href="./4.html">4</a></li>
+      <li><a href="./5.html">5</a></li>
+      <li><a href="./6.html">6</a></li>
+      <li><a href="./7.html">7</a></li>
+      <li><a href="./8.html">8</a></li>
+      <li><a href="./9.html">9</a></li>
+      <li><a href="./10.html">10</a></li>
+      <li><a href="./11.html">11</a></li>
+      <li><a href="./12.html">12</a></li>
+      <li><a href="./13.html">13</a></li>
+      <li><a href="./14.html">14</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Cálculo de suma de números enteros</h1>
+    <p>3. Ingrese varios números enteros y muestre la cantidad de números ingresados y la suma de los mismos. Realice
+      esta acción hasta que el usuario ingrese la palabra FIN.</p>
+    <form id="formulario">
+      <label for="numero">Ingrese un número entero (o "FIN" para terminar):</label>
+      <input type="text" id="numero">
+      <br>
+      <button type="submit">Agregar</button>
+    </form>
 
-  <div id="resultado"></div>
-
-  <script>
-    var formulario = document.getElementById('formulario');
-    var resultado = document.getElementById('resultado');
-    var numeros = [];
-    var suma = 0;
-
-    formulario.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var inputNumero = document.getElementById('numero');
-      var numero = inputNumero.value.trim();
-
-      if (numero.toUpperCase() === 'FIN') {
-        var cantidadNumeros = numeros.length;
-        resultado.innerHTML = '<p>Cantidad de números ingresados: ' + cantidadNumeros + '</p>' +
-                              '<p>Suma de los números: ' + suma + '</p>';
-        inputNumero.disabled = true;
-      } else {
-        var numeroEntero = parseInt(numero);
-        if (isNaN(numeroEntero)) {
-          alert('Por favor, ingrese un número entero válido o "FIN" para terminar.');
-        } else {
-          numeros.push(numeroEntero);
-          suma += numeroEntero;
-          inputNumero.value = '';
-        }
-      }
-    });
-  </script>
+    <div id="resultado"></div>
+  </main>
+  <footer>
+    <hr>
+    <p>Programador: Luis Fernando Torres Correa</p>
+    <p>moviles 1</p>
+  </footer>
+  <script src="./js/3.js"></script>
 </body>
+
 </html>

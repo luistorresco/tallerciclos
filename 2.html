@@ -1,92 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        /* Estilos para el menú */
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-    
-        li {
-          display: inline-block;
-          margin-right: 10px;
-        }
-    
-        a {
-          text-decoration: none;
-          padding: 5px 10px;
-          background-color: #ddd;
-          color: #333;
-          border-radius: 5px;
-        }
-      </style>
-    <ul>
-        <li><a href="./1.html">1</a></li>
-        <li><a href="./2.html">2</a></li>
-        <li><a href="./3.html">3</a></li>
-        <li><a href="./4.html">4</a></li>
-        <li><a href="./5.html">5</a></li>
-        <li><a href="./6.html">6</a></li>
-        <li><a href="./7.html">7</a></li>
-        <li><a href="./8.html">8</a></li>
-        <li><a href="./9.html">9</a></li>
-        <li><a href="./10.html">10</a></li>
-        <li><a href="./11.html">11</a></li>
-        <li><a href="./12.html">12</a></li>
-        <li><a href="./13.html">13</a></li>
-        <li><a href="./14.html">14</a></li>
-      </ul>
-  <title>Cálculo de promedio de notas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Js</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-  <h1>Cálculo de promedio de notas</h1>
-<p>2.	Hacer un programa que pida el nombre de un estudiante y N notas, calcular el promedio de las notas y determinar si el estudiante aprueba o reprueba; (Aprueba con un promedio de 3).  </p>
-  <form id="formulario">
-    <label for="nombre">Nombre del estudiante:</label>
-    <input type="text" id="nombre" required>
-    <br>
-    <label for="cantidad-notas">Cantidad de notas:</label>
-    <input type="number" id="cantidad-notas" min="1" required>
-    <br>
-    <button type="submit">Calcular</button>
-  </form>
+  <nav>
+    <ul>
+      <li><a href="./1.html">1</a></li>
+      <li><a href="./2.html">2</a></li>
+      <li><a href="./3.html">3</a></li>
+      <li><a href="./4.html">4</a></li>
+      <li><a href="./5.html">5</a></li>
+      <li><a href="./6.html">6</a></li>
+      <li><a href="./7.html">7</a></li>
+      <li><a href="./8.html">8</a></li>
+      <li><a href="./9.html">9</a></li>
+      <li><a href="./10.html">10</a></li>
+      <li><a href="./11.html">11</a></li>
+      <li><a href="./12.html">12</a></li>
+      <li><a href="./13.html">13</a></li>
+      <li><a href="./14.html">14</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Cálculo de promedio de notas</h1>
+    <p>2. Hacer un programa que pida el nombre de un estudiante y N notas, calcular el promedio de las notas y
+      determinar si el estudiante aprueba o reprueba; (Aprueba con un promedio de 3). </p>
+    <form id="formulario">
+      <label for="nombre">Nombre del estudiante:</label>
+      <input type="text" id="nombre" required>
+      <br>
+      <label for="cantidad-notas">Cantidad de notas:</label>
+      <input type="number" id="cantidad-notas" min="1" required>
+      <br>
+      <button type="submit">Calcular</button>
+    </form>
 
-  <div id="resultado"></div>
-
-  <script>
-    var formulario = document.getElementById('formulario');
-    var resultado = document.getElementById('resultado');
-
-    formulario.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var nombreEstudiante = document.getElementById('nombre').value;
-      var cantidadNotas = parseInt(document.getElementById('cantidad-notas').value);
-
-      if (isNaN(cantidadNotas) || cantidadNotas <= 0) {
-        resultado.textContent = 'Por favor, ingrese una cantidad válida de notas.';
-      } else {
-        var sumaNotas = 0;
-
-        for (var i = 1; i <= cantidadNotas; i++) {
-          var nota = parseFloat(prompt('Ingrese la nota ' + i + ':'));
-          sumaNotas += nota;
-        }
-
-        var promedio = sumaNotas / cantidadNotas;
-
-        var mensajeResultado;
-        if (promedio >= 3) {
-          mensajeResultado = 'El estudiante ' + nombreEstudiante + ' aprueba con un promedio de ' + promedio.toFixed(2);
-        } else {
-          mensajeResultado = 'El estudiante ' + nombreEstudiante + ' reprueba con un promedio de ' + promedio.toFixed(2);
-        }
-
-        resultado.textContent = mensajeResultado;
-      }
-    });
-  </script>
+    <div id="resultado"></div>
+  </main>
+  <Footer>
+    <hr>
+    <p>Programador: Luis fernando Torres Correa</p>
+    <p>moviles 1</p>
+  </Footer>
+  <script src="./js/2.js"></script>
 </body>
+
 </html>

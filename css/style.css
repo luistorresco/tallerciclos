@@ -1,0 +1,35 @@
+/* Estilos para el menú */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #ddd;
+    color: #333;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+pre {
+    white-space: pre-wrap;
+    font-family: monospace;
+}

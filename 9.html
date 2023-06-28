@@ -1,94 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        /* Estilos para el menú */
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-    
-        li {
-          display: inline-block;
-          margin-right: 10px;
-        }
-    
-        a {
-          text-decoration: none;
-          padding: 5px 10px;
-          background-color: #ddd;
-          color: #333;
-          border-radius: 5px;
-        }
-      </style>
-    <ul>
-        <li><a href="./1.html">1</a></li>
-        <li><a href="./2.html">2</a></li>
-        <li><a href="./3.html">3</a></li>
-        <li><a href="./4.html">4</a></li>
-        <li><a href="./5.html">5</a></li>
-        <li><a href="./6.html">6</a></li>
-        <li><a href="./7.html">7</a></li>
-        <li><a href="./8.html">8</a></li>
-        <li><a href="./9.html">9</a></li>
-        <li><a href="./10.html">10</a></li>
-        <li><a href="./11.html">11</a></li>
-        <li><a href="./12.html">12</a></li>
-        <li><a href="./13.html">13</a></li>
-        <li><a href="./14.html">14</a></li>
-      </ul>
-  <title>Escalera invertida de asteriscos</title>
-  
-  <style>
-    pre {
-      white-space: pre-wrap;
-      font-family: monospace;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Js</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-  <h1>Escalera invertida de asteriscos</h1>
-  <p>9.	Digite un número (altura) y a partir de él cree una escalera invertida de asteriscos o el carácter que desee; con esa altura. Deberá quedar así, si ponemos una altura de 5.</p>
+  <nav>
+    <ul>
+      <li><a href="./1.html">1</a></li>
+      <li><a href="./2.html">2</a></li>
+      <li><a href="./3.html">3</a></li>
+      <li><a href="./4.html">4</a></li>
+      <li><a href="./5.html">5</a></li>
+      <li><a href="./6.html">6</a></li>
+      <li><a href="./7.html">7</a></li>
+      <li><a href="./8.html">8</a></li>
+      <li><a href="./9.html">9</a></li>
+      <li><a href="./10.html">10</a></li>
+      <li><a href="./11.html">11</a></li>
+      <li><a href="./12.html">12</a></li>
+      <li><a href="./13.html">13</a></li>
+      <li><a href="./14.html">14</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Escalera invertida de asteriscos</h1>
+    <p>9. Digite un número (altura) y a partir de él cree una escalera invertida de asteriscos o el carácter que desee;
+      con esa altura. Deberá quedar así, si ponemos una altura de 5.</p>
 
-  <form id="formulario">
-    <label for="altura">Ingrese la altura:</label>
-    <input type="number" id="altura" min="1" required>
-    <br>
-    <button type="submit">Crear escalera invertida</button>
-  </form>
+    <form id="formulario">
+      <label for="altura">Ingrese la altura:</label>
+      <input type="number" id="altura" min="1" required>
+      <br>
+      <button type="submit">Crear escalera invertida</button>
+    </form>
 
-  <pre id="escalera"></pre>
-
-  <script>
-    var formulario = document.getElementById('formulario');
-    var escaleraPre = document.getElementById('escalera');
-
-    formulario.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var altura = parseInt(document.getElementById('altura').value);
-
-      if (isNaN(altura)) {
-        alert('Por favor, ingrese una altura válida.');
-      } else {
-        escaleraPre.innerText = '';
-        crearEscaleraInvertida(altura);
-      }
-    });
-
-    function crearEscaleraInvertida(altura) {
-      for (var i = 0; i < altura; i++) {
-        var linea = '';
-        for (var j = 0; j < i; j++) {
-          linea += ' ';
-        }
-        for (var k = i; k < altura; k++) {
-          linea += '*';
-        }
-        escaleraPre.innerText += linea + '\n';
-      }
-    }
-  </script>
+    <pre id="escalera"></pre>
+  </main>
+  <footer>
+    <hr>
+    <p>Programador: Luis Fernando Torres Correa</p>
+    <p>moviles 1</p>
+  </footer>
+  <script src="./js/9.js"></script>
 </body>
+
 </html>
